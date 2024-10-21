@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 import os
 import uuid
-import graphviz
 from graphviz import Digraph
 
 app = Flask(__name__)
