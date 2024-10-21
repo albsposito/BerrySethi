@@ -1,0 +1,34 @@
+#:import Window kivy.core.window.Window
+BoxLayout:
+    orientation: 'vertical'
+    spacing: dp(10)
+    padding: dp(20)
+
+    MDLabel:
+        text: "Regular Expression to DFA Converter"
+        halign: 'center'
+        theme_text_color: 'Primary'
+        font_style: 'H5'
+        size_hint_y: None
+        height: self.texture_size[1]
+
+    MDTextField:
+        id: regex_input
+        hint_text: "Enter Regular Expression"
+        helper_text: "Supports +, *, |, and parentheses"
+        helper_text_mode: "on_focus"
+        size_hint_x: None
+        width: Window.width - dp(40)
+        pos_hint: {'center_x': 0.5}
+
+    MDRectangleFlatButton:
+        text: "Generate DFA"
+        pos_hint: {'center_x': 0.5}
+        on_release: app.generate_dfa()
+
+    Image:
+        id: dfa_image
+        source: ''
+        allow_stretch: True
+        keep_ratio: True
+        size_hint: (1, 1)
